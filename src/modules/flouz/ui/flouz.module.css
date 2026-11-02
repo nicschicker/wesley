@@ -1,0 +1,55 @@
+.stack { display: grid; gap: var(--s-4); }
+.formGrid { display: grid; gap: var(--s-3); grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); align-items: start; }
+.actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-2); }
+.panel { padding: var(--s-4); border-radius: var(--r-m); background: var(--surface); border: 1px solid var(--line); }
+.inline { display: flex; flex-wrap: wrap; gap: var(--s-2); }
+.inline .input { flex: 1 1 220px; min-width: 0; }
+.participants { grid-column: 1 / -1; border: 0; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--s-2) var(--s-4); }
+.participants legend { width: 100%; margin-bottom: var(--s-1); }
+.participant { display: inline-flex; align-items: center; gap: var(--s-2); }
+.danger { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-3); padding-top: var(--s-3); border-top: 1px solid var(--line); }
+.confirm { display: inline-flex; align-items: center; gap: var(--s-2); font-size: 14px; color: var(--danger); }
+
+/* Übersicht */
+.groups { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.groupRow {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--s-3); align-items: center;
+  padding: var(--s-4) var(--s-2); border-bottom: 1px solid var(--line); color: var(--ink); text-decoration: none;
+}
+.groupRow:hover { background: var(--surface); }
+.groupName { font: 600 22px/26px var(--font-display); }
+.balances { display: grid; justify-items: end; gap: 2px; }
+.plus { color: var(--success); font-weight: 600; }
+.minus { color: var(--danger); font-weight: 600; }
+.even { color: var(--ink-soft); }
+
+.totals { display: flex; flex-wrap: wrap; gap: var(--s-5); }
+.total { display: grid; gap: 2px; }
+.totalValue { font: 700 32px/36px var(--font-display); }
+
+/* Gruppe */
+.members { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--s-2); }
+.member {
+  display: inline-flex; align-items: center; gap: var(--s-1);
+  padding: 4px 4px 4px 12px; border-radius: var(--r-full); background: var(--surface); border: 1px solid var(--line); font-size: 14px;
+}
+.member button { width: 28px; height: 28px; padding: 0; }
+.debts { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s-2); }
+.debt {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: var(--s-3); align-items: center;
+  padding: var(--s-3) var(--s-4); border-radius: var(--r-m); background: var(--surface); border: 1px solid var(--line);
+}
+.debtAmount { font: 700 20px/24px var(--font-display); }
+.expenses { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.expense { padding-block: var(--s-3); border-bottom: 1px solid var(--line); display: grid; gap: var(--s-2); }
+.expenseHead { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--s-3); align-items: baseline; }
+.expenseAmount { font: 700 20px/24px var(--font-display); white-space: nowrap; }
+.splits { display: flex; flex-wrap: wrap; gap: var(--s-2); }
+.split {
+  display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: var(--r-full);
+  border: 1px solid var(--line); background: var(--surface); font: 500 13px/18px var(--font-body); color: var(--ink); cursor: pointer;
+}
+.split:hover { border-color: var(--ink-soft); }
+.splitPaid { background: transparent; color: var(--ink-faint); text-decoration: line-through; }
+.splitPayer { cursor: default; color: var(--ink-soft); border-style: dashed; }
+.expenseFoot { display: flex; justify-content: space-between; align-items: center; gap: var(--s-2); }

@@ -6,7 +6,7 @@
   inset: auto 0 0 0;
   z-index: 20;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   background: var(--surface-sunk);
   border-top: 1px solid var(--line);
   padding-bottom: env(safe-area-inset-bottom, 0px);
@@ -45,9 +45,11 @@
   a.item:hover { background: var(--surface); color: var(--ink); }
   .item[aria-current="page"] { background: var(--surface); color: var(--ink); }
   .item[aria-current="page"] svg { color: var(--primary); }
-  .badge {
-    margin-left: auto; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
-    color: var(--ink-faint);
+  .group { display: grid; gap: var(--s-1); }
+  .groupLabel {
+    padding-inline: var(--s-3); font-size: 12px; line-height: 16px; font-weight: 600;
+    letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-faint);
   }
+  .sidebar { overflow-y: auto; }
   .user { margin-top: auto; padding-inline: var(--s-2); font-size: 14px; color: var(--ink-soft); }
 }

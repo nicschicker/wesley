@@ -5,8 +5,10 @@ Jede Person sieht nur ihre eigenen Daten. Registrierung nur mit Einladung.
 
 **Live:** https://wesley-app.netlify.app
 
-**Stand:** Grundgerüst mit Login, Registrierung per Einladung, Admin-Seite und
-Startseite «Heute». Die Module folgen schrittweise.
+**Stand:** Login mit Einladung, Admin, «Heute» mit Routinen-Spielstand, sechs Bereiche
+(Harbejt, Škola, Familie, Freundin mit Tasks und Zielen; Sport mit Trainingstagebuch;
+Flouz mit geteilten Ausgaben). Kalender, Jahrestage, News und Restaurants folgen.
+Prompts der Bauschritte: `docs/prompts/`.
 
 ## Dienste und Kosten
 

@@ -1,0 +1,13 @@
+.list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); max-width: 720px; }
+.row {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto auto; align-items: center; gap: var(--s-4);
+  padding: var(--s-4) var(--s-2); border-bottom: 1px solid var(--line);
+  color: var(--ink); text-decoration: none;
+}
+.row:hover { background: var(--surface); }
+.main { display: grid; }
+.name { font: 600 24px/28px var(--font-display); }
+.count { display: grid; justify-items: end; }
+.num { font: 700 28px/28px var(--font-display); }
+.overdue { color: var(--danger); font-weight: 600; }
+.chev { color: var(--ink-faint); }
