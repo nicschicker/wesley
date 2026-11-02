@@ -1,0 +1,19 @@
+.shell { min-height: 100%; }
+.main {
+  width: 100%;
+  max-width: var(--content);
+  margin-inline: auto;
+  padding-top: var(--s-5);
+  /* Platz für die Tab-Leiste */
+  padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px));
+  padding-left: max(var(--gutter), env(safe-area-inset-left, 0px));
+  padding-right: max(var(--gutter), env(safe-area-inset-right, 0px));
+  display: grid;
+  gap: var(--s-6);
+  align-content: start;
+  min-width: 0;
+}
+@media (min-width: 900px) {
+  .shell { display: flex; }
+  .main { padding-top: var(--s-6); padding-bottom: var(--s-7); }
+}

@@ -1,0 +1,24 @@
+.head { display: grid; gap: var(--s-1); }
+.section { display: grid; gap: var(--s-4); max-width: 720px; }
+.form { display: grid; gap: var(--s-4); justify-items: start; }
+.form > .row { width: 100%; }
+.row { display: flex; flex-wrap: wrap; gap: var(--s-4); }
+.codeBox {
+  display: grid; gap: var(--s-2); justify-items: start;
+  padding: var(--s-4); border-radius: var(--r-m);
+  background: var(--primary-wash); width: 100%;
+}
+.code { font: 700 32px/36px var(--font-display); letter-spacing: 0.04em; user-select: all; }
+.list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.item {
+  display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-3);
+  padding-block: var(--s-3); border-bottom: 1px solid var(--line);
+}
+.itemMain { flex: 1 1 220px; min-width: 0; }
+.chip {
+  font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 4px 8px; border-radius: var(--r-s); border: 1px solid var(--line);
+}
+.ok { background: var(--primary-wash); border-color: transparent; }
+.used { color: var(--success); }
+.expired { color: var(--ink-faint); }

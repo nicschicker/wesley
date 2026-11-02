@@ -1,0 +1,20 @@
+.page {
+  min-height: 100%;
+  display: grid;
+  place-items: center;
+  padding-block: var(--s-7);
+  padding-left: max(var(--gutter), env(safe-area-inset-left, 0px));
+  padding-right: max(var(--gutter), env(safe-area-inset-right, 0px));
+}
+.panel {
+  width: 100%;
+  max-width: 400px;
+  display: grid;
+  gap: var(--s-6);
+}
+.brand { display: flex; align-items: center; gap: var(--s-3); }
+.logo { border-radius: 11px; }
+.wordmark { font: 700 28px/1 var(--font-display); letter-spacing: 0.01em; }
+.form { display: grid; gap: var(--s-4); }
+.heading { display: grid; gap: var(--s-2); }
+.footer { font-size: 14px; color: var(--ink-soft); }

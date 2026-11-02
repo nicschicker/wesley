@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FF8A2B"/>
+      <stop offset="1" stop-color="#E85D0A"/>
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="1024" fill="url(#bg)"/>
+  <!-- W in Schnürlischrift: Anstrich-Schlaufe links, zwei Bögen, Endschlaufe rechts -->
+  <path d="M168 392
+           C 168 300, 268 268, 286 352
+           C 316 520, 330 724, 398 724
+           C 458 724, 482 576, 512 468
+           C 542 576, 566 724, 626 724
+           C 712 724, 740 520, 776 352
+           C 790 290, 856 272, 868 318"
+        fill="none" stroke="#FFFFFF" stroke-width="132" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
