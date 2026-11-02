@@ -2,7 +2,7 @@ name: Supabase wach halten
 
 # Gratis-Projekte pausieren nach rund einer Woche ohne Aktivität.
 # Dieser Job ruft einmal täglich den Health-Check der App auf.
-# Voraussetzung: Repository-Variable APP_URL (z. B. https://wesley-xyz.vercel.app).
+# URL der App; kann mit der Repository-Variable APP_URL überschrieben werden.
 
 on:
   schedule:
@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Health-Check aufrufen
         env:
-          APP_URL: ${{ vars.APP_URL }}
+          APP_URL: ${{ vars.APP_URL || 'https://wesley-app.netlify.app' }}
         run: |
           if [ -z "$APP_URL" ]; then
             echo "APP_URL ist nicht gesetzt, überspringe."

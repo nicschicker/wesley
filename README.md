@@ -3,6 +3,8 @@
 Persönliche Alltags-App: Tasks, Termine, Jahrestage, News und Restaurants an einem Ort.
 Jede Person sieht nur ihre eigenen Daten. Registrierung nur mit Einladung.
 
+**Live:** https://wesley-app.netlify.app
+
 **Stand:** Grundgerüst mit Login, Registrierung per Einladung, Admin-Seite und
 Startseite «Heute». Die Module folgen schrittweise.
 
@@ -10,7 +12,7 @@ Startseite «Heute». Die Module folgen schrittweise.
 
 | Dienst | Plan | Kreditkarte | Was passiert beim Limit |
 |---|---|---|---|
-| Vercel | Hobby | nein | Deployments/Funktionen werden gebremst, keine Rechnung |
+| Netlify | Free | nein | Projekt wird pausiert, keine Rechnung |
 | Supabase | Free | nein | Projekt pausiert bei Inaktivität bzw. Limits blockieren, keine Rechnung |
 | GitHub | Free | nein | Actions-Minuten reichen für CI und den täglichen Ping |
 
@@ -27,20 +29,22 @@ Einmalig in Supabase einstellen:
 2. **Secret Key kopieren:** Project Settings → API Keys → «Secret keys» → Schlüssel
    kopieren (nie weitergeben, nie in den Code).
 
-### 2. Vercel
+### 2. Netlify
 
-1. vercel.com → Add New → Project → GitHub-Repository `wesley` importieren.
-2. Bei «Environment Variables» eintragen:
-   - `NEXT_PUBLIC_SUPABASE_URL` = `https://wizyosikcfywqdxfbvqa.supabase.co`
-   - `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` = Publishable Key aus Supabase
-   - `SUPABASE_SECRET_KEY` = Secret Key aus Schritt 1.2
-3. Deploy. Die URL lautet dann etwa `https://wesley-xyz.vercel.app`.
+Projekt `wesley-app`, verbunden mit diesem Repository. Jeder Push auf `main` deployt automatisch.
 
-### 3. GitHub: Supabase wach halten
+- Umgebungsvariablen (Project configuration → Environment variables):
+  `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, `SUPABASE_SECRET_KEY`.
+- `netlify.toml` nimmt die zwei öffentlichen Werte vom Geheimnis-Scan aus. Der Scan bleibt für
+  den Secret Key aktiv.
+- Zugriff: Die Live-Seite ist öffentlich (Login übernimmt die App), Vorschau-Deploys nur mit
+  Netlify-Team-Login.
 
-Repository → Settings → Secrets and variables → Actions → Tab «Variables» →
-neue Variable `APP_URL` mit der Vercel-URL. Der Job «Supabase wach halten» ruft dann
-täglich `/api/health` auf.
+### 3. Supabase wach halten
+
+Der GitHub-Job «Supabase wach halten» ruft täglich `https://wesley-app.netlify.app/api/health` auf.
+Ändert sich die URL, im Repository unter Settings → Secrets and variables → Actions → Variables
+`APP_URL` setzen.
 
 ### 4. Erstes Konto
 
