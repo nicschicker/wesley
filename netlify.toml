@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "22"
+  NEXT_TELEMETRY_DISABLED = "1"
+  # Diese beiden Werte sind absichtlich öffentlich (landen im Browser-Code).
+  # Der Geheimnis-Scan bleibt für alle anderen Variablen aktiv, z. B. SUPABASE_SECRET_KEY.
+  SECRETS_SCAN_OMIT_KEYS = "NEXT_PUBLIC_SUPABASE_URL,NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY"
